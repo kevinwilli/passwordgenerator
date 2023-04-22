@@ -1,10 +1,6 @@
 package edu.guilford;
 
-import java.util.Scanner;
-//import password generator class
-import edu.guilford.PasswordGenerator;
-//import the AES class
-import edu.guilford.AES;
+
 
 
 public class User {
@@ -12,20 +8,16 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
- 
     private String password;
     private String color;
     private String animal;
     private String number;
     private String sport;
 
-
-
     // constructor
     public User(String firstName, String lastName, String email, String color, String animal, String number, String sport) {
         this.firstName = firstName;
-        this.lastName = lastName;
-       
+        this.lastName = lastName; 
         this.email = email;
         this.color = color;
         this.animal = animal;
@@ -99,9 +91,6 @@ public class User {
     public void setSport(String sport) {
         this.sport = sport;
     }
-
-   
-
     //Create a method to generate a random single special characters
     //to make it more complicated I am going to add a random special character to the password
     //this is the method that will generate the random special character
@@ -114,29 +103,10 @@ public class User {
     }
     //Create a method that genrerate a password based on the user's input and the random special character
     //This is the method that will generate the password
+
     public static String generatePassword(String firstName, String lastName, String email, String color, String animal, String number, String sport) {
-        String password = firstName.substring(0, 1) + lastName.substring(0, 1) + email.substring(0, 1) + color.substring(0, 1) + animal.substring(0, 1) + number.substring(0, 1) + sport.substring(0, 1) + generateSpecialCharacters();
+        String password = firstName.substring(0, 1) + lastName.substring(0, 1) + email.substring(0, 1) + color.substring(0, 1) + animal.substring(0, 1) + number.substring(0, 1) + sport.substring(0, 1) /*+ generateSpecialCharacters()*/;
         return password;
     }
-    
-
-    //toString method with the password and username from the methods above
-    //this is the method that will print out the password and username
-    @Override
-    public String toString() {
-        return "User [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password=" + password + ", color=" + color + ", animal=" + animal + ", number=" + number + ", sport=" + sport + "]";
-    }
-
-
-    public String decryptPassword(String password2) {
-        return null;
-    }
-
-
-    public String encryptPassword(String password2) {
-        return null;
-    }
-  
-      
-    
+   
 }

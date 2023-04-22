@@ -7,10 +7,7 @@ import java.util.Arrays;
 import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
-//import the user class
-import edu.guilford.User;
-//import the password generator class
-import edu.guilford.PasswordGenerator;
+
 public class AES {
 private static SecretKeySpec secretKey;
 private static byte[] key;
@@ -57,12 +54,12 @@ return null;
 }
 
 
-//create a method to encrypt the password from user.generatepassword(firstName, lastName, email, color, animal, number, sport) method
+/*//create a method to encrypt the password from user.generatepassword(firstName, lastName, email, color, animal, number, sport) method
 public static String encryptPassword(String firstName, String lastName, String email, String color, String animal, String number, String sport) {
 PasswordGenerator password = new PasswordGenerator(firstName, lastName, email, color, animal, number, sport);
 String encryptedPassword = AES.encrypt(password.getPassword(), "password");
 return encryptedPassword;
-}
+}*/
 
 //create a method to decrypt the password from user.generatepassword(firstName, lastName, email, color, animal, number, sport) method
 public static String decryptPassword(String firstName, String lastName, String email, String color, String animal, String number, String sport) {
@@ -72,18 +69,16 @@ return decryptedPassword;
 }
 
 
-
-/* 
-//create a method to check if the password entered by the user is correct
-public static boolean checkPassword(String password, String firstName, String lastName, String email, String color, String animal, String number, String sport) {
-PasswordGenerator password1 = new PasswordGenerator(firstName, lastName, email, color, animal, number, sport);
-String encryptedPassword = AES.encrypt(password1.getPassword(), "password");
-if (encryptedPassword.equals(password)) {
-return true;
-} else {
-return false;
+public static String encryptPassword (String password) {
+String encryptedPassword = AES.encrypt(password, "password");
+return encryptedPassword;
 }
+//use the method above and correct the syntax
 
-}*/
+
+public static String decryptPassword(String password) {
+String decryptedPassword = AES.decrypt(password, "password");
+return decryptedPassword;
+}
 
 }

@@ -61,19 +61,19 @@ String encryptedPassword = AES.encrypt(password.getPassword(), "password");
 return encryptedPassword;
 }*/
 
-//create a method to decrypt the password from user.generatepassword(firstName, lastName, email, color, animal, number, sport) method
-public static String decryptPassword(String firstName, String lastName, String email, String color, String animal, String number, String sport) {
-PasswordGenerator password = new PasswordGenerator(firstName, lastName, email, color, animal, number, sport);
-String decryptedPassword = AES.decrypt(password.getPassword(), "password");
-return decryptedPassword;
-}
+// //create a method to decrypt the password from user.generatepassword(firstName, lastName, email, color, animal, number, sport) method
+// public static String decryptPassword(String firstName, String lastName, String email, String color, String animal, String number, String sport) {
+// PasswordGenerator password = new PasswordGenerator(firstName, lastName, email, color, animal, number, sport);
+// String decryptedPassword = AES.decrypt(password.getPassword(), "password");
+// return decryptedPassword;
+// }
 
 
 public static String encryptPassword (String password) {
 String encryptedPassword = AES.encrypt(password, "password");
 return encryptedPassword;
 }
-//use the method above and correct the syntax
+
 
 
 public static String decryptPassword(String password) {

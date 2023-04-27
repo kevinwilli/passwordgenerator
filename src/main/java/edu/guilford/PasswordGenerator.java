@@ -136,12 +136,7 @@ public class PasswordGenerator
         //I use the quick fix to get this (don't rally know why and where to put it)
 
         //Create a getPassword method that will return the password of the user 
-    public String getPassword() {
-    return null;
-}
-    public static String getPassword(User user) {
-    return user.getPassword();
-}
+
 
 
 }
